@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/jjz-hsh/frontend/issues"
   },
-  "homepage": "https://github.com/jjz-hsh/frontend#readme"
+  "homepage": "https://github.com/jjz-hsh/frontend#readme",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-webserver": "^0.9.1"
+  }
 }
