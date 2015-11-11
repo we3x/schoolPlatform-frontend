@@ -1,0 +1,19 @@
+{
+  "name": "hsh-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for high school hack projects (learning platform)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjz-hsh/frontend.git"
+  },
+  "author": "wex <veljko.simic98@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jjz-hsh/frontend/issues"
+  },
+  "homepage": "https://github.com/jjz-hsh/frontend#readme"
+}
