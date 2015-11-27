@@ -6,16 +6,7 @@
   <fieldset class="layout">
     <div>
       <div>
-        <input type="email" ng-model="user.email" name="email"required>
-        <label for="email">Email</label>
-      </div>
-      <div class="error" ng-messages="loginForm.email.$touched && loginForm.email.$error" role="alert">
-        <div ng-message="email">
-          Please enter a valid email address
-        </div>
-        <div ng-message="required">
-          Email is required
-        </div>
+        <input  ng-model="user.username"required> Username
       </div>
       <div>
         <input type="password" ng-model="user.password" name="password"required>

@@ -8,7 +8,7 @@ module.exports = [
   function loginController($scope, loginService, $state) {
 
     $scope.user = {
-      email: '',
+      username: '',
       password: ''
     };
 
