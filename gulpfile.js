@@ -8,6 +8,7 @@ global.gulp = require('gulp');
 
 global.schoolPlatformPaths = {
   app: path.resolve('./app'),
+  jsGlob: path.resolve('./app/scripts/**/*.js'),
   jsEntry: path.resolve('./app/scripts/app.js')
 };
 
@@ -20,7 +21,7 @@ gulp.task('webserver',['javascript'], function setupWebServer(){
       }));
 });
 
-gulp.task('javascript', function() {
+gulp.task('javascript',['watch'], function() {
 
   var bundler = browserify({
     entries: [schoolPlatformPaths.jsEntry],
@@ -39,5 +40,7 @@ gulp.task('javascript', function() {
 
   return bundle();
 });
-
-gulp.task('default', ['webserver']);
+gulp.task('watch', function initWatchers() {
+  gulp.watch(schoolPlatformPaths.jsGlob, ['javascript']);
+});
+gulp.task('default', ['webserver', 'watch']);
