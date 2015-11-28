@@ -3,11 +3,16 @@
 module.exports = [
   '$scope',
   '$http',
-  function schoolPlatformConfig($scope, $http){
-    $http.get('http://192.168.33.3:8000/api/v1/me/').then(function(data){
-      $scope.user = data[0];
-    })
-    console.log($scope.user)
-    $scope.hello = "Helloooo :D " + $scope.user;
-  }
+  '$state',
+  function schoolPlatformConfig($scope, $http, $state){
+    $http.get('http://192.168.33.3:8000/api/v1/me/').success(function(data){
+     $scope.user = data[0];
+    }).then(function(){
+      if ($scope.user.type == 'professor')
+        $state.go('professor');
+      if ($scope.user.type == 'student')
+        console.log("Student")
+      if ($scope.user.type == '')
+        console.log("Nije ni student ni profesor");
+    })}
 ];
