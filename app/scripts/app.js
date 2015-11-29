@@ -3,13 +3,13 @@
 require('angular');
 require('./auth/app.js');
 require('./professor/app.js');
-// require('./student/app.js');
+require('./student/app.js');
 
 angular.module('schoolPlatform', [
   require('angular-ui-router'),
   'schoolPlatform.auth',
   'schoolPlatform.professor',
- // 'schoolPlatform.student',
+  'schoolPlatform.student',
 ])
   .config(require('./config.js'))
   .controller('schoolPlatformController', require('./app-controller.js'))
