@@ -1,4 +1,3 @@
-
 'use strict'
 
 module.exports = [
@@ -7,6 +6,7 @@ module.exports = [
     $stateProvider
     .state('student',{
       url: '/student',
+      controller: 'studentController',
       templateUrl: 'scripts/student/views/student.html'
     });
   }
