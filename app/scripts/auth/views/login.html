@@ -1,23 +1,9 @@
-<form
-    novalidate
-    ng-submit="login()"
-    name="loginForm">
-
-  <fieldset class="layout">
-    <div>
-      <div>
-        <input  ng-model="user.username"required> Username
-      </div>
-      <div>
-        <input type="password" ng-model="user.password" name="password"required>
-        <label for="password">Password</label>
-      </div>
-      <div class="error" ng-messages="loginForm.password.$touched && loginForm.password.$error" role="alert">
-        <div ng-message="required">
-          Password is required
-        </div>
-      </div>
-      <button type="submit" ng-disabled="loginForm.$invalid || loginForm.$submitted">Login</button>
-    </div>
-  </fieldset>
+<link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+<div class='container' style="width:400px">
+<form novalidate ng-submit="login()" name="loginForm">
+  <h2 class="form-signin-heading">Please sign in</h2>
+  <input class="form-control" placeholder="Username" id="id_username" maxlength="254" ng-model="user.username"type="text" required autofocus=""/>
+  <input type="password" class="form-control" placeholder="Password" id="id_password" ng-model="user.password" type="password" required />
+  <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="loginForm.$invalid || loginForm.$submitted"value="Submit" />Sign in</button>
 </form>
+</div>
