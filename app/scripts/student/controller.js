@@ -3,8 +3,9 @@
 module.exports = [
   '$scope',
   '$http',
+  '$stateParams',
   'API_URL',
-  function studentController($scope, $http, API_URL){
+  function studentController($scope, $http, $stateParams, API_URL){
     $http.get(API_URL + 'me/').success(function(data){
       $scope.user = data[0];
     }).error(function(){
@@ -19,5 +20,6 @@ module.exports = [
             $scope.texts = data;
           })
     })
+    $scope.sbct = $stateParams.subject;
   }
 ]

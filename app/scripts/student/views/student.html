@@ -2,10 +2,16 @@
     <div class="container-fluid">
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-navi navbar-left" ng-repeat="subject in subjects">
-                <a class="navbar-brand">
+              <a class="navbar-brand" href="/#/student/{{subject.name}}">
                             {{subject.name}}
                 </a>
+            </ul>
+            <ul class="nav navbar-right">
+              <a href='/#/student/home'>
+                Home
+              </a>
             </ul>
         </div>
     </div>
 </div>
+<div ui-view></div>

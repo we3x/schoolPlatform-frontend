@@ -11,7 +11,7 @@ module.exports = [
       if ($scope.user.type == 'professor')
         $state.go('professor');
       if ($scope.user.type == 'student')
-        $state.go('student');
+        $state.go('student.home');
       if ($scope.user.type == '')
         $state.go('home');
     })}
