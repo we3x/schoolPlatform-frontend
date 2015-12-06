@@ -17,7 +17,7 @@ module.exports = [
     .state('student.subject',{
       url: '/:subject',
       controller: 'studentController',
-      template: '<h1>{{sbct}}</h1>'
+      templateUrl: 'scripts/student/views/texts.html'
     })
   }
 ];
