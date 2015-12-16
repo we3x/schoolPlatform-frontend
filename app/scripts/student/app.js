@@ -6,4 +6,5 @@ angular.module('schoolPlatform.student',[
 ])
   .config(require('./config.js'))
   .service('studentService', require('./service.js'))
-  .controller('studentController', require('./controller.js'));
+  .controller('studentController', require('./controller.js'))
+  .controller('tController', require('./tController.js'));
