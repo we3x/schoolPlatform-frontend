@@ -8,7 +8,7 @@ module.exports = [
     $scope.sbct = $stateParams.subject;
     studentService.texts(1)
     .then(function(result){
-        $scope.texts = result["data"].filter(function(entry){
+        $scope.texts = result.data.filter(function(entry){
                     return entry.subject === $scope.sbct
                 });
       }).then(function(){

@@ -13,7 +13,12 @@ module.exports = [
     function texts(class_id){
       return $http.get(API_URL + 'classes/' + class_id + '/texts/');
     }
+
+    function notify(class_id){
+      return $http.get(API_URL + 'classes/' + class_id + '/notify/');
+    }
     return {
+      notify: notify,
       me: me,
       subjects: subjects,
       texts: texts
