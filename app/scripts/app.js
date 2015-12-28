@@ -13,4 +13,4 @@ angular.module('schoolPlatform', [
 ])
   .config(require('./config.js'))
   .controller('schoolPlatformController', require('./app-controller.js'))
-  .constant('API_URL', 'http://192.168.33.3:8000/api/v1/')
+  .constant('API_URL', 'http://192.168.33.3:8000/api/v1/');

@@ -1,16 +1,14 @@
 'use strict'
 
 module.exports = [
+  '$window',
   '$scope',
-  '$stateParams',
   'studentService',
-  '$rootScope',
-  function studentController($scope, $stateParams, studentService, $rootScope){
-    studentService.subjects($rootScope.me.need)
-    .then(function(result){
-            $scope.subjects = result["data"];
-          }).catch(function(err){
-            console.log(err);
+  'me',
+  function studentController($window, $scope,studentService, me){
+    studentService.getSubjects(me.data[0].need).then(function(resolve){
+      $scope.subjects = resolve["data"];
     })
-    }
+
+  }
 ]

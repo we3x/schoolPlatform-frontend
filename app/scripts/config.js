@@ -5,7 +5,6 @@ module.exports = [
   '$stateProvider',
   function schoolPlatformConfig($urlRouterProvider, $stateProvider){
     $urlRouterProvider.otherwise('/');
-
     $stateProvider
       .state('home', {
         url: '/',

@@ -4,8 +4,8 @@ require('angular');
 angular.module('schoolPlatform.student',[
   require('angular-ui-router')
 ])
-  .config(require('./config.js'))
   .service('studentService', require('./service.js'))
-  .run(require('./run.js'))
+  .config(require('./config.js'))
   .controller('studentController', require('./controller.js'))
+  .controller('nController', require('./nController.js'))
   .controller('tController', require('./tController.js'));

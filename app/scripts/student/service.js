@@ -10,18 +10,17 @@ module.exports = [
     function subjects(class_id){
       return $http.get(API_URL + 'classes/' + class_id + '/subjects/');
     }
-    function texts(class_id){
-      return $http.get(API_URL + 'classes/' + class_id + '/texts/');
+    function texts(subject_id){
+      return $http.get(API_URL + 'subjects/' + subject_id + '/texts/');
     }
-
-    function notify(class_id){
+    function note(class_id){
       return $http.get(API_URL + 'classes/' + class_id + '/notify/');
     }
     return {
-      notify: notify,
-      me: me,
-      subjects: subjects,
-      texts: texts
+      getNote: note,
+      getMe: me,
+      getSubjects: subjects,
+      getTexts: texts
     };
 
   }

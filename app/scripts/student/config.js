@@ -7,15 +7,34 @@ module.exports = [
     .state('student',{
       abstract: true,
       url: '/student',
+      resolve : {
+        me : ['studentService',
+          function(studentService){
+            return studentService.getMe()
+        }]},
       controller: 'studentController',
-      templateUrl: 'scripts/student/views/student.html'
+      templateUrl: 'scripts/student/views/student.html',
     })
     .state('student.home',{
       url: '/home',
-      template: '<h1>Home</h1>'
+      resolve : {
+        notes : ['studentService', '$window',
+          function(studentService, $window){
+            return studentService.getNote($window.sessionStorage.me)
+        }]
+      },
+      controller: 'nController',
+      templateUrl: 'scripts/student/views/notify.html'
     })
     .state('student.subject',{
       url: '/:subject',
+      resolve :{
+        texts: ['$stateParams','studentService',
+          function($stateParams, studentService){
+            return studentService.getTexts($stateParams.subject);
+          }
+        ]
+      },
       controller: 'tController',
       templateUrl: 'scripts/student/views/texts.html'
     })
