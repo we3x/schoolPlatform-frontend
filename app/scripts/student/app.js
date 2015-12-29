@@ -6,6 +6,7 @@ angular.module('schoolPlatform.student',[
 ])
   .service('studentService', require('./service.js'))
   .config(require('./config.js'))
+  .directive('noteDirective', require('./noteDirective.js'))
   .controller('studentController', require('./controller.js'))
   .controller('nController', require('./nController.js'))
   .controller('tController', require('./tController.js'));
