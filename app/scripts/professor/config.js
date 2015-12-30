@@ -6,7 +6,8 @@ module.exports = [
     $stateProvider
     .state('professor',{
       url: '/professor',
-      templateUrl: 'scripts/professor/views/professor.html'
+      templateUrl: 'scripts/professor/views/professor.html',
+      controller: 'professorController'
     });
   }
 ];
