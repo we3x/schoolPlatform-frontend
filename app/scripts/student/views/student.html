@@ -7,10 +7,16 @@
                 </a>
             </ul>
             <ul class="nav navbar-right">
-              <a href='/#/student/home'>
-                Home
-              </a>
-            </ul>
+            <div class="dropdown navbar-brand">
+              <button class="btn btn-link dropdown-toggle"  data-toggle="dropdown">{{username}}</button>
+                <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="/#/student/home/">Home</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Log out</a></li>
+              </ul>
+            </div>
+          </ul>
         </div>
     </div>
 </div>

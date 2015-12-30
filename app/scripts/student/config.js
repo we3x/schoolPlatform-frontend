@@ -8,10 +8,11 @@ module.exports = [
       abstract: true,
       url: '/student',
       resolve : {
-        me : ['studentService',
-          function(studentService){
-            return studentService.getMe()
-        }]},
+        subjects : ['studentService', '$window',
+          function(studentService, $window){
+            return studentService.getSubjects($window.sessionStorage.me)
+        }]
+      },
       controller: 'studentController',
       templateUrl: 'scripts/student/views/student.html',
     })
