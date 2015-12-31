@@ -1,3 +1,6 @@
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="bower_components/ngWYSIWYG/css/editor.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-collapse collapse">
@@ -14,4 +17,14 @@
           </ul>
         </div>
     </div>
+</div>
+<div class="col-sm-3 col-md-3 sidebar">
+    <div ng-repeat="subject in subjects">
+    <input type="checkbox" ng-click="togleSelect(subject)">{{subject.name}} {{subject.class_name}}</br>
+    </div>
+</div>
+<div class="col-sm-9 col-sm-offset-4 col-md-9 col-md-offset-3 main">
+  <h2>Name:<input ng-model="name"></input> </h2>
+  <wysiwyg-edit content="content" config="editorConfig"></wysiwyg-edit>
+  <button ng-click="showSelected()">Post</button>
 </div>
