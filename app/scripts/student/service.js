@@ -3,7 +3,8 @@
 module.exports = [
   'API_URL',
   '$http',
-  function studentService(API_URL, $http){
+  '$window',
+  function studentService(API_URL, $http, $window){
     function me(){
       return $http.get(API_URL + 'me/');
     }
@@ -27,6 +28,14 @@ module.exports = [
     function deleteNote(text){
       return $http.delete(API_URL + 'notify/' + text.id + '/');
     }
+    function logOut() {
+      delete $http.defaults.headers.common.Authorization;
+      delete $window.sessionStorage.oneloveAuthToken;
+      delete $window.sessionStorage.me;
+      delete $window.sessionStorage.id;
+      delete $window.sessionStorage.need;
+      delete $window.sessionStorage.username;
+    }
     return {
       getNote: note,
       getMe: me,
@@ -34,7 +43,8 @@ module.exports = [
       getTexts: texts,
       putNote: putNote,
       deleteNote: deleteNote,
-      postNote: postNote
+      postNote: postNote,
+      logOut: logOut
     };
 
   }

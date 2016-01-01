@@ -5,7 +5,8 @@ module.exports = [
   '$scope',
   'subjects',
   'professorService',
-  function professorController($window, $scope, subjects, professorService){
+  '$state',
+  function professorController($window, $scope, subjects, professorService, $state){
     $scope.username = $window.sessionStorage.username;
     $scope.subjects = subjects.data;
     $scope.togleSelect = function(subject){
@@ -30,6 +31,10 @@ module.exports = [
           professorService.putText({name: $scope.name, text: $scope.content, subject_id: subject.id})
       }
       $window.location.reload();
+    }
+    $scope.logOut = function(){
+      professorService.logOut()
+      $state.go('auth.login');
     }
   }
 ]

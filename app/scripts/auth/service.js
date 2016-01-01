@@ -22,21 +22,18 @@ module.exports = [
 
     function logIn(user) {
       return $http.post(API_URL + 'auth/', user)
-        .then(function(response) {
-          authenticate(response.data.token);
-        });
+        .success(function(data) {
+          authenticate(data.token);
+        }).error(function(err){
+          $window.location.reload();
+        })
     }
 
-    function logOut() {
-      delete $http.defaults.headers.common.Authorization;
-      delete $window.sessionStorage.oneloveAuthToken;
-    }
 
     return {
       logIn: logIn,
       attachToken: attachToken,
       isLoggedIn: isLoggedIn,
-      logOut: logOut
     };
   }
 ];
