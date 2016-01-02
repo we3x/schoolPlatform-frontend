@@ -31,6 +31,9 @@ gulp.task('javascript',['watch'], function() {
   var bundle = function() {
     return bundler
       .bundle()
+      .on('error', function(err){
+        console.log(err.toString());
+      })
       .pipe(source('schoolPlatform.js'))
       .pipe(buffer())
       .pipe(sourcemaps.init({loadMaps: true}))
