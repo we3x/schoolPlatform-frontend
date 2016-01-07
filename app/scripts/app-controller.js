@@ -14,7 +14,7 @@ module.exports = [
       $window.sessionStorage.username = $scope.user.username;
     }).then(function(){
       if ($scope.user.type == 'professor')
-        $state.go('professor');
+        $state.go('professor.newText');
       if ($scope.user.type == 'student')
         $state.go('student.home');
       if ($scope.user.type == '')

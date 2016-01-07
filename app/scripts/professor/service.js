@@ -19,10 +19,14 @@ module.exports = [
       delete $window.sessionStorage.need;
       delete $window.sessionStorage.username;
     }
+    function texts(subject_id){
+      return $http.get(API_URL + 'subjects/' + subject_id + '/texts/');
+    }
     return {
       getSubjects: getSubjects,
       putText: putText,
-      logOut: logOut
+      logOut: logOut,
+      getTexts: texts,
     }
   }
 ];

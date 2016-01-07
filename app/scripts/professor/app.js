@@ -8,4 +8,5 @@ angular.module('schoolPlatform.professor',[
 ])
   .config(require('./config.js'))
   .service('professorService', require('./service.js'))
-  .controller('professorController', require('./controller.js'));
+  .controller('professorController', require('./controller.js'))
+  .controller('newTextController', require('./professorControler.js'));
