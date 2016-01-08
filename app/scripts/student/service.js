@@ -36,6 +36,12 @@ module.exports = [
       delete $window.sessionStorage.need;
       delete $window.sessionStorage.username;
     }
+    function getComment(id){
+      return $http.get(API_URL + 'text/' + id + '/comments/')
+    }
+    function saveComment(comment){
+      return $http.post(API_URL + 'comments/', comment);
+    }
     return {
       getNote: note,
       getMe: me,
@@ -44,7 +50,9 @@ module.exports = [
       putNote: putNote,
       deleteNote: deleteNote,
       postNote: postNote,
-      logOut: logOut
+      logOut: logOut,
+      getComment: getComment,
+      saveComment: saveComment
     };
 
   }
