@@ -5,7 +5,8 @@ module.exports = [
   '$scope',
   'subjects',
   '$state',
-  function professorController($window, $scope, subjects, $state){
+  'professorService',
+  function professorController($window, $scope, subjects, $state, professorService){
       $scope.subjects = subjects.data;
       $scope.togleSelect = function(subject){
             subject.selected = !subject.selected;
