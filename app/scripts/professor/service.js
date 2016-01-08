@@ -22,11 +22,19 @@ module.exports = [
     function texts(subject_id){
       return $http.get(API_URL + 'subjects/' + subject_id + '/texts/');
     }
+    function text(text_id){
+      return $http.get(API_URL + 'text/' + text_id + '/');
+    }
+    function saveText(text){
+      return $http.put(API_URL + 'text/' + text.id + '/', text);
+    }
     return {
       getSubjects: getSubjects,
       putText: putText,
       logOut: logOut,
       getTexts: texts,
+      getText: text,
+      saveText: saveText
     }
   }
 ];

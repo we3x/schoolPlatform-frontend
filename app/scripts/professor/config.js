@@ -25,6 +25,18 @@ module.exports = [
       templateUrl: 'scripts/professor/views/addText.html',
       controller: 'newTextController'
     })
+    .state('professor.edit', {
+      url: 'edit/:id/',
+      resolve : {
+        text: ['$stateParams', 'professorService',
+          function($stateParams, professorService){
+            return professorService.getText($stateParams.id);
+          }
+        ]
+      },
+      controller : 'editTextController',
+      templateUrl: 'scripts/professor/views/edit.html'
+    })
     .state('professor.subject', {
       url:':id/',
       resolve : {
