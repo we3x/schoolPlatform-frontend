@@ -9,7 +9,7 @@ module.exports = [
       abstract: true,
       resolve : {
         subjects : ['$window','professorService',function subjects($window, professorService){
-          return professorService.getSubjects($window.sessionStorage.id)
+          return professorService.getSubjects($window.sessionStorage.me)
         }]
       },
       controller: 'professorController',
@@ -19,7 +19,7 @@ module.exports = [
       url: 'new-text/',
       resolve : {
         subjects : ['$window','professorService',function subjects($window, professorService){
-          return professorService.getSubjects($window.sessionStorage.id)
+          return professorService.getSubjects($window.sessionStorage.me)
         }]
       },
       templateUrl: 'scripts/professor/views/addText.html',

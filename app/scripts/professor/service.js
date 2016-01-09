@@ -28,13 +28,21 @@ module.exports = [
     function saveText(text){
       return $http.put(API_URL + 'text/' + text.id + '/', text);
     }
+    function getComment(id){
+      return $http.get(API_URL + 'text/' + id + '/comments/')
+    }
+    function saveComment(comment){
+      return $http.post(API_URL + 'comments/', comment);
+    }
     return {
       getSubjects: getSubjects,
       putText: putText,
       logOut: logOut,
       getTexts: texts,
       getText: text,
-      saveText: saveText
+      saveText: saveText,
+      getComment: getComment,
+      saveComment: saveComment
     }
   }
 ];
