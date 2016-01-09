@@ -5,7 +5,8 @@ module.exports = [
   'texts',
   '$sce',
   'studentService',
-  function tController($scope, texts, $sce, studentService){
+  '$window',
+  function tController($scope, texts, $sce, studentService, $window){
     $scope.texts = texts.data;
     $scope.getComment = function(){
       studentService.getComment($scope.current.id).then(function(result){
@@ -19,7 +20,7 @@ module.exports = [
     }
     $scope.current = $scope.getCurrent($scope.texts[0])
     $scope.saveComment = function(comment){
-      $http.post(API_URL + 'comments/', {writer:$window.sessionStorage.id, text:$scope.current.id, comment:comment}).then(function(){
+      studentService.saveComment({writer:$window.sessionStorage.id, text:$scope.current.id, comment:comment}).then(function(){
       $scope.getComment()
       $scope.comment = ''
       })
